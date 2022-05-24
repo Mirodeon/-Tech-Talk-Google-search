@@ -52,6 +52,9 @@ body {
             margin: 0px auto;
             margin-top: 50px;
             display: none;
+            @media screen and (min-height: 801px) {
+                margin-top: 160px;
+            }
 
             &.show-content {
                 display: block;
@@ -115,12 +118,21 @@ body {
                     position: relative;
                     cursor: pointer;
 
-                    .next,
-                    .prev {
+                    .next1,
+                    .prev1,
+                    .next2,
+                    .prev2,
+                    .next3,
+                    .prev3,
+                    .next4,
+                    .prev4,
+                    .next5,
+                    .prev5 {
                         height: 64px;
                         width: 64px;
                         border-radius: 50%;
                         display: block;
+                        opacity: 0.2;
                     }
 
                     .bg-button {
@@ -140,6 +152,7 @@ body {
 
                         img {
                             animation: 0.5s linear 0s infinite alternate nextlight;
+                            opacity: 1;
                         }
                     }
                 }

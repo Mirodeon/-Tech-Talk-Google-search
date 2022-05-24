@@ -46,6 +46,11 @@ body main .theme-section {
   margin-top: 50px;
   display: none;
 }
+@media screen and (min-height: 801px) {
+  body main .theme-section {
+    margin-top: 160px;
+  }
+}
 body main .theme-section.show-content {
   display: block;
 }
@@ -107,12 +112,21 @@ body main .theme-section .container-button .button-carousel {
   position: relative;
   cursor: pointer;
 }
-body main .theme-section .container-button .button-carousel .next,
-body main .theme-section .container-button .button-carousel .prev {
+body main .theme-section .container-button .button-carousel .next1,
+body main .theme-section .container-button .button-carousel .prev1,
+body main .theme-section .container-button .button-carousel .next2,
+body main .theme-section .container-button .button-carousel .prev2,
+body main .theme-section .container-button .button-carousel .next3,
+body main .theme-section .container-button .button-carousel .prev3,
+body main .theme-section .container-button .button-carousel .next4,
+body main .theme-section .container-button .button-carousel .prev4,
+body main .theme-section .container-button .button-carousel .next5,
+body main .theme-section .container-button .button-carousel .prev5 {
   height: 64px;
   width: 64px;
   border-radius: 50%;
   display: block;
+  opacity: 0.2;
 }
 body main .theme-section .container-button .button-carousel .bg-button {
   position: absolute;
@@ -132,6 +146,7 @@ body main .theme-section .container-button .button-carousel:hover {
 body main .theme-section .container-button .button-carousel:hover img {
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
+  opacity: 1;
 }
 
 @-webkit-keyframes nextlight {
