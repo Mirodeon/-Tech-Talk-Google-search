@@ -1,0 +1,173 @@
+@import "reset.css";
+
+body {
+    background: radial-gradient(black, grey);
+
+    header {
+        .nav__header {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            max-width: 50px;
+            min-height: 100%;
+            box-sizing: border-box;
+            background: radial-gradient(black, grey);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            box-shadow: inset -1px 1px 5px 0px grey, inset -1px -1px 5px 0px grey, -1px 1px 5px 0px black, -1px -1px 5px 0px black;
+
+            .button__nav {
+                width: 100px;
+                height: 100px;
+                box-sizing: border-box;
+                background: radial-gradient(black, grey);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0px 50px 50px 0px;
+                box-shadow: inset -1px 1px 5px 0px grey, inset -1px -1px 5px 0px grey, -1px 1px 5px 0px black, -1px -1px 5px 0px black;
+
+                img {
+                    height: 64px;
+                    width: 64px;
+                    border-radius: 50%;
+                }
+
+                &:hover {
+                    width: 150px;
+                    animation: 0.5s linear 0s infinite alternate nextlight;
+
+                    img {
+                        animation: 0.5s linear 0s infinite alternate navlight;
+                        transform: translateX(25px);
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        section {
+            margin: 0px auto;
+            margin-top: 100px;
+
+            .container-cadre {
+                box-sizing: border-box;
+                width: 900px;
+                height: 500px;
+                margin: 0px auto;
+                background: white;
+                position: relative;
+
+                .cadre {
+                    position: absolute;
+                    top: -80px;
+                    left: -18px;
+                    width: 1000px;
+                    height: 600px;
+                    display: block;
+                }
+
+                .spot {
+                    position: absolute;
+                    transform: rotate(180deg);
+                    width: 200px;
+                    height: 100px;
+                    top: 500px;
+                    left: 350px;
+                    animation: 5s ease-in 1s infinite alternate spotlight;
+                }
+
+                .carousel {
+                    display: none;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 100%;
+                    text-align: center;
+
+                    &.active {
+                        display: flex;
+                    }
+                }
+            }
+
+            .container-button {
+                box-sizing: border-box;
+                width: 450px;
+                height: auto;
+                margin: 0px auto;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 50px;
+
+                .button-carousel {
+                    position: relative;
+                    cursor: pointer;
+
+                    .next,
+                    .prev {
+                        height: 64px;
+                        width: 64px;
+                        border-radius: 50%;
+                        display: block;
+                    }
+
+                    .bg_button {
+                        position: absolute;
+                        width: 100px;
+                        display: block;
+                        z-index: -1;
+                        top: -18px;
+                        left: -18px;
+                        background: radial-gradient(black, grey);
+                        border-radius: 50%;
+                        box-shadow: inset -1px 1px 5px 0px grey, inset -1px -1px 5px 0px grey, -1px 1px 5px 0px black, -1px -1px 5px 0px black;
+                    }
+
+                    &:hover {
+                        animation: 0.5s linear 0s infinite alternate nextlight;
+
+                        img {
+                            animation: 0.5s linear 0s infinite alternate nextlight;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes nextlight {
+    from {
+        filter: drop-shadow(0px 0px 0px cyan);
+    }
+
+    to {
+        filter: drop-shadow(0px 0px 5px cyan);
+    }
+}
+
+@keyframes spotlight {
+    from {
+        filter: drop-shadow(0px 0px -1px cyan);
+    }
+
+    to {
+        filter: drop-shadow(-1px 0px 0px cyan);
+        filter: drop-shadow(0px -1px 0px cyan);
+        filter: drop-shadow(1px 0px 0px cyan);
+        filter: drop-shadow(0px 1px 0px cyan);
+    }
+}
+
+@keyframes navlight {
+    from {
+        filter: none;
+    }
+
+    to {
+        filter: drop-shadow(0px 0px 0px cyan);
+    }
+}
