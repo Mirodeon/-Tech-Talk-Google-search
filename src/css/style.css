@@ -102,7 +102,7 @@ body main section .container-button .button-carousel .prev {
   border-radius: 50%;
   display: block;
 }
-body main section .container-button .button-carousel .bg_button {
+body main section .container-button .button-carousel .bg-button {
   position: absolute;
   width: 100px;
   display: block;
