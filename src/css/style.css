@@ -41,11 +41,15 @@ body header .nav__header .button__nav:hover img {
           animation: 0.5s linear 0s infinite alternate navlight;
   transform: translateX(25px);
 }
-body main section {
+body main .theme-section {
   margin: 0px auto;
   margin-top: 50px;
+  display: none;
 }
-body main section .container-cadre {
+body main .theme-section.show-content {
+  display: block;
+}
+body main .theme-section .container-cadre {
   box-sizing: border-box;
   width: 900px;
   height: 500px;
@@ -53,7 +57,7 @@ body main section .container-cadre {
   background: white;
   position: relative;
 }
-body main section .container-cadre .cadre {
+body main .theme-section .container-cadre .cadre {
   position: absolute;
   top: -80px;
   left: -18px;
@@ -61,7 +65,7 @@ body main section .container-cadre .cadre {
   height: 600px;
   display: block;
 }
-body main section .container-cadre .spot {
+body main .theme-section .container-cadre .spot {
   position: absolute;
   transform: rotate(180deg);
   width: 200px;
@@ -71,7 +75,11 @@ body main section .container-cadre .spot {
   -webkit-animation: 5s ease-in 1s infinite alternate spotlight;
           animation: 5s ease-in 1s infinite alternate spotlight;
 }
-body main section .container-cadre .carousel {
+body main .theme-section .container-cadre .carousel1,
+body main .theme-section .container-cadre .carousel2,
+body main .theme-section .container-cadre .carousel3,
+body main .theme-section .container-cadre .carousel4,
+body main .theme-section .container-cadre .carousel5 {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -79,10 +87,14 @@ body main section .container-cadre .carousel {
   min-height: 100%;
   text-align: center;
 }
-body main section .container-cadre .carousel.active {
+body main .theme-section .container-cadre .carousel1.active,
+body main .theme-section .container-cadre .carousel2.active,
+body main .theme-section .container-cadre .carousel3.active,
+body main .theme-section .container-cadre .carousel4.active,
+body main .theme-section .container-cadre .carousel5.active {
   display: flex;
 }
-body main section .container-button {
+body main .theme-section .container-button {
   box-sizing: border-box;
   width: 450px;
   height: auto;
@@ -91,18 +103,18 @@ body main section .container-button {
   justify-content: space-between;
   margin-top: 50px;
 }
-body main section .container-button .button-carousel {
+body main .theme-section .container-button .button-carousel {
   position: relative;
   cursor: pointer;
 }
-body main section .container-button .button-carousel .next,
-body main section .container-button .button-carousel .prev {
+body main .theme-section .container-button .button-carousel .next,
+body main .theme-section .container-button .button-carousel .prev {
   height: 64px;
   width: 64px;
   border-radius: 50%;
   display: block;
 }
-body main section .container-button .button-carousel .bg-button {
+body main .theme-section .container-button .button-carousel .bg-button {
   position: absolute;
   width: 100px;
   display: block;
@@ -113,11 +125,11 @@ body main section .container-button .button-carousel .bg-button {
   border-radius: 50%;
   box-shadow: inset -1px 1px 5px 0px grey, inset -1px -1px 5px 0px grey, -1px 1px 5px 0px black, -1px -1px 5px 0px black;
 }
-body main section .container-button .button-carousel:hover {
+body main .theme-section .container-button .button-carousel:hover {
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
 }
-body main section .container-button .button-carousel:hover img {
+body main .theme-section .container-button .button-carousel:hover img {
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
 }

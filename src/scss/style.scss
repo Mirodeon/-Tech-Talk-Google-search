@@ -48,9 +48,14 @@ body {
     }
 
     main {
-        section {
+        .theme-section {
             margin: 0px auto;
             margin-top: 50px;
+            display: none;
+
+            &.show-content {
+                display: block;
+            }
 
             .container-cadre {
                 box-sizing: border-box;
@@ -79,7 +84,11 @@ body {
                     animation: 5s ease-in 1s infinite alternate spotlight;
                 }
 
-                .carousel {
+                .carousel1,
+                .carousel2,
+                .carousel3,
+                .carousel4,
+                .carousel5 {
                     display: none;
                     flex-direction: column;
                     align-items: center;
