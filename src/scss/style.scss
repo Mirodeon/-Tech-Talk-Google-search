@@ -1,5 +1,6 @@
 @import "reset.css";
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Road+Rage&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Open+Sans&display=swap');
 
 body {
     background: radial-gradient(black, grey);
@@ -71,6 +72,10 @@ body {
                 display: block;
             }
 
+            &.homepage {
+                margin-top: 100px;
+            }
+
             .container-img_homepage {
                 margin: 0px auto;
                 position: relative;
@@ -93,11 +98,31 @@ body {
                 }
             }
 
-            h1 {
+            .title_homepage {
                 text-align: center;
                 color: white;
                 font-size: 110px;
                 font-family: 'Road Rage', cursive;
+                margin: 0px auto;
+                margin-top: 50px;
+                position: relative;
+                line-height: 140px;
+                width: 400px;
+                box-sizing: border-box;
+                position: relative;
+                box-shadow: inset -1px 1px 5px 0px grey, inset -1px -1px 5px 0px grey, -1px 1px 5px 0px black, -1px -1px 5px 0px black;
+                border-radius: 70px;
+                overflow: hidden;
+                text-shadow: -1px 1px 5px black, -1px -1px 5px black;
+
+                .bg_title_homepage {
+                    position: absolute;
+                    top: -130px;
+                    left: 0px;
+                    z-index: -1;
+                    width: 400px;
+                    animation: 2s ease-out 1s infinite alternate spotlight;
+                }
             }
 
             .container-cadre {
@@ -116,6 +141,7 @@ body {
                     height: 600px;
                     display: block;
                     filter: drop-shadow(-1px 1px 5px black) drop-shadow(-1px -1px 5px black);
+                    z-index: 2;
                 }
 
                 .spot {
@@ -138,10 +164,38 @@ body {
                     align-items: center;
                     justify-content: center;
                     min-height: 100%;
+                    width: 100%;
                     text-align: center;
+                    overflow: hidden;
 
                     &.active {
                         display: flex;
+                    }
+
+                    #s1s1_img,
+                    #s1s2_img {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 0;
+                        display: block;
+                    }
+
+                    h2 {
+                        position: absolute;
+                        z-index: 1;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 40px;
+                        text-align: left;
+                        align-self: flex-start;
+                        top: 295px;
+                        left: 105px;
+                        justify-self: flex-start;
+                        span {
+                            animation: 1s ease-in 1s infinite blinking;
+                        }
                     }
                 }
             }
@@ -229,5 +283,13 @@ body {
 
     to {
         filter: drop-shadow(0px 0px 0px cyan);
+    }
+}
+@keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
     }
 }
