@@ -92,7 +92,7 @@ body main .theme-section .title_homepage {
   font-size: 110px;
   font-family: "Road Rage", cursive;
   margin: 0px auto;
-  margin-top: 50px;
+  margin-top: 25px;
   position: relative;
   line-height: 140px;
   width: 400px;
@@ -102,6 +102,11 @@ body main .theme-section .title_homepage {
   border-radius: 70px;
   overflow: hidden;
   text-shadow: -1px 1px 5px black, -1px -1px 5px black;
+}
+@media screen and (min-height: 801px) {
+  body main .theme-section .title_homepage {
+    margin-top: 50px;
+  }
 }
 body main .theme-section .title_homepage .bg_title_homepage {
   position: absolute;
