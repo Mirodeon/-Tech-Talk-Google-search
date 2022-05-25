@@ -70,6 +70,7 @@ body main .theme-section .container-img_homepage {
   margin: 0px auto;
   position: relative;
   width: 500px;
+  margin-top: -50px;
 }
 body main .theme-section .container-img_homepage .logo_homepage {
   display: block;
