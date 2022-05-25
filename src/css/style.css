@@ -54,6 +54,11 @@ body main .theme-section {
 body main .theme-section.show-content {
   display: block;
 }
+body main .theme-section h1 {
+  text-align: center;
+  color: white;
+  font-size: 110px;
+}
 body main .theme-section .container-cadre {
   box-sizing: border-box;
   width: 900px;
