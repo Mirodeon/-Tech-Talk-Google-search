@@ -1,8 +1,13 @@
 @import "reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Road+Rage&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Open+Sans&display=swap");
+* {
+  cursor: url("../../src/cursor/Obsidian Quad.cur"), auto;
+}
+
 body {
   background: radial-gradient(black, grey);
+  font-family: "Open Sans", sans-serif;
 }
 body header .nav__header {
   position: fixed;
@@ -37,6 +42,7 @@ body header .nav__header .button__nav:hover {
   width: 150px;
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
+  cursor: url("../../src/cursor/Obsidian Full.cur"), pointer;
 }
 body header .nav__header .button__nav:hover img {
   -webkit-animation: 0.5s linear 0s infinite alternate navlight;
@@ -57,7 +63,7 @@ body main .theme-section {
 }
 @media screen and (min-height: 801px) {
   body main .theme-section {
-    margin-top: 160px;
+    margin-top: 140px;
   }
 }
 body main .theme-section.show-content {
@@ -65,6 +71,11 @@ body main .theme-section.show-content {
 }
 body main .theme-section.homepage {
   margin-top: 100px;
+}
+@media screen and (min-height: 801px) {
+  body main .theme-section.homepage {
+    margin-top: 160px;
+  }
 }
 body main .theme-section .container-img_homepage {
   margin: 0px auto;
@@ -114,15 +125,14 @@ body main .theme-section .title_homepage .bg_title_homepage {
   left: 0px;
   z-index: -1;
   width: 400px;
-  -webkit-animation: 2s ease-out 1s infinite alternate spotlight;
-          animation: 2s ease-out 1s infinite alternate spotlight;
+  -webkit-animation: 3s ease-in 1s infinite alternate spotlight;
+          animation: 3s ease-in 1s infinite alternate spotlight;
 }
 body main .theme-section .container-cadre {
   box-sizing: border-box;
   width: 900px;
   height: 500px;
   margin: 0px auto;
-  background: white;
   position: relative;
 }
 body main .theme-section .container-cadre .cadre {
@@ -151,13 +161,11 @@ body main .theme-section .container-cadre .carousel3,
 body main .theme-section .container-cadre .carousel4,
 body main .theme-section .container-cadre .carousel5 {
   display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100%;
-  width: 100%;
-  text-align: center;
+  width: 900px;
+  height: 500px;
   overflow: hidden;
+  color: white;
+  background: black;
 }
 body main .theme-section .container-cadre .carousel1.active,
 body main .theme-section .container-cadre .carousel2.active,
@@ -165,6 +173,13 @@ body main .theme-section .container-cadre .carousel3.active,
 body main .theme-section .container-cadre .carousel4.active,
 body main .theme-section .container-cadre .carousel5.active {
   display: flex;
+}
+body main .theme-section .container-cadre .carousel1.active#s1s3,
+body main .theme-section .container-cadre .carousel2.active#s1s3,
+body main .theme-section .container-cadre .carousel3.active#s1s3,
+body main .theme-section .container-cadre .carousel4.active#s1s3,
+body main .theme-section .container-cadre .carousel5.active#s1s3 {
+  flex-wrap: wrap;
 }
 body main .theme-section .container-cadre .carousel1 #s1s1_img,
 body main .theme-section .container-cadre .carousel1 #s1s2_img,
@@ -184,28 +199,59 @@ body main .theme-section .container-cadre .carousel5 #s1s2_img {
   z-index: 0;
   display: block;
 }
-body main .theme-section .container-cadre .carousel1 h2,
-body main .theme-section .container-cadre .carousel2 h2,
-body main .theme-section .container-cadre .carousel3 h2,
-body main .theme-section .container-cadre .carousel4 h2,
-body main .theme-section .container-cadre .carousel5 h2 {
+body main .theme-section .container-cadre .carousel1 #s1s2_title,
+body main .theme-section .container-cadre .carousel2 #s1s2_title,
+body main .theme-section .container-cadre .carousel3 #s1s2_title,
+body main .theme-section .container-cadre .carousel4 #s1s2_title,
+body main .theme-section .container-cadre .carousel5 #s1s2_title {
   position: absolute;
   z-index: 1;
-  font-family: "Open Sans", sans-serif;
   font-size: 40px;
   text-align: left;
-  align-self: flex-start;
   top: 295px;
   left: 105px;
-  justify-self: flex-start;
+  color: black;
 }
-body main .theme-section .container-cadre .carousel1 h2 span,
-body main .theme-section .container-cadre .carousel2 h2 span,
-body main .theme-section .container-cadre .carousel3 h2 span,
-body main .theme-section .container-cadre .carousel4 h2 span,
-body main .theme-section .container-cadre .carousel5 h2 span {
-  -webkit-animation: 1s ease-in 1s infinite blinking;
-          animation: 1s ease-in 1s infinite blinking;
+body main .theme-section .container-cadre .carousel1 #s1s2_title span,
+body main .theme-section .container-cadre .carousel2 #s1s2_title span,
+body main .theme-section .container-cadre .carousel3 #s1s2_title span,
+body main .theme-section .container-cadre .carousel4 #s1s2_title span,
+body main .theme-section .container-cadre .carousel5 #s1s2_title span {
+  -webkit-animation: 1s ease-in 0s infinite blinking;
+          animation: 1s ease-in 0s infinite blinking;
+}
+body main .theme-section .container-cadre .carousel1 #s1s3_title,
+body main .theme-section .container-cadre .carousel2 #s1s3_title,
+body main .theme-section .container-cadre .carousel3 #s1s3_title,
+body main .theme-section .container-cadre .carousel4 #s1s3_title,
+body main .theme-section .container-cadre .carousel5 #s1s3_title {
+  align-self: center;
+  margin-left: 100px;
+  font-size: 40px;
+  width: 350px;
+  box-sizing: border-box;
+}
+body main .theme-section .container-cadre .carousel1 #s1s3_txt,
+body main .theme-section .container-cadre .carousel2 #s1s3_txt,
+body main .theme-section .container-cadre .carousel3 #s1s3_txt,
+body main .theme-section .container-cadre .carousel4 #s1s3_txt,
+body main .theme-section .container-cadre .carousel5 #s1s3_txt {
+  margin-top: -25px;
+  margin-left: 100px;
+  width: 640px;
+}
+body main .theme-section .container-cadre .carousel1 #s1s3_img,
+body main .theme-section .container-cadre .carousel2 #s1s3_img,
+body main .theme-section .container-cadre .carousel3 #s1s3_img,
+body main .theme-section .container-cadre .carousel4 #s1s3_img,
+body main .theme-section .container-cadre .carousel5 #s1s3_img {
+  display: block;
+  width: 400px;
+  height: 250px;
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-right: 50px;
+  box-sizing: border-box;
 }
 body main .theme-section .container-button {
   box-sizing: border-box;
@@ -250,6 +296,7 @@ body main .theme-section .container-button .button-carousel .bg-button {
 body main .theme-section .container-button .button-carousel:hover {
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
+  cursor: url("../../src/cursor/Obsidian Full.cur"), pointer;
 }
 body main .theme-section .container-button .button-carousel:hover img {
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;

@@ -2,8 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Road+Rage&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Open+Sans&display=swap');
 
+* {
+    cursor: url('../../src/cursor/Obsidian Quad.cur'), auto;
+}
+
 body {
     background: radial-gradient(black, grey);
+    font-family: 'Open Sans', sans-serif;
 
     header {
         .nav__header {
@@ -39,6 +44,7 @@ body {
                 &:hover {
                     width: 150px;
                     animation: 0.5s linear 0s infinite alternate nextlight;
+                    cursor: url('../../src/cursor/Obsidian Full.cur'), pointer;
 
                     img {
                         animation: 0.5s linear 0s infinite alternate navlight;
@@ -65,7 +71,7 @@ body {
             display: none;
 
             @media screen and (min-height: 801px) {
-                margin-top: 160px;
+                margin-top: 140px;
             }
 
             &.show-content {
@@ -74,6 +80,10 @@ body {
 
             &.homepage {
                 margin-top: 100px;
+
+                @media screen and (min-height: 801px) {
+                    margin-top: 160px;
+                }
             }
 
             .container-img_homepage {
@@ -126,7 +136,7 @@ body {
                     left: 0px;
                     z-index: -1;
                     width: 400px;
-                    animation: 2s ease-out 1s infinite alternate spotlight;
+                    animation: 3s ease-in 1s infinite alternate spotlight;
                 }
             }
 
@@ -135,7 +145,6 @@ body {
                 width: 900px;
                 height: 500px;
                 margin: 0px auto;
-                background: white;
                 position: relative;
 
                 .cadre {
@@ -165,16 +174,18 @@ body {
                 .carousel4,
                 .carousel5 {
                     display: none;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    min-height: 100%;
-                    width: 100%;
-                    text-align: center;
+                    width: 900px;
+                    height: 500px;
                     overflow: hidden;
+                    color: white;
+                    background: black;
 
                     &.active {
                         display: flex;
+
+                        &#s1s3 {
+                            flex-wrap: wrap;
+                        }
                     }
 
                     #s1s1_img,
@@ -188,20 +199,42 @@ body {
                         display: block;
                     }
 
-                    h2 {
+                    #s1s2_title {
                         position: absolute;
                         z-index: 1;
-                        font-family: 'Open Sans', sans-serif;
                         font-size: 40px;
                         text-align: left;
-                        align-self: flex-start;
                         top: 295px;
                         left: 105px;
-                        justify-self: flex-start;
+                        color: black;
 
                         span {
-                            animation: 1s ease-in 1s infinite blinking;
+                            animation: 1s ease-in 0s infinite blinking;
                         }
+                    }
+
+                    #s1s3_title {
+                        align-self: center;
+                        margin-left: 100px;
+                        font-size: 40px;
+                        width: 350px;
+                        box-sizing: border-box;
+                    }
+
+                    #s1s3_txt {
+                        margin-top: -25px;
+                        margin-left: 100px;
+                        width: 640px;
+                    }
+
+                    #s1s3_img {
+                        display: block;
+                        width: 400px;
+                        height: 250px;
+                        border-radius: 50px;
+                        margin-top: 50px;
+                        margin-right: 50px;
+                        box-sizing: border-box;
                     }
                 }
             }
@@ -250,6 +283,7 @@ body {
 
                     &:hover {
                         animation: 0.5s linear 0s infinite alternate nextlight;
+                        cursor: url('../../src/cursor/Obsidian Full.cur'), pointer;
 
                         img {
                             animation: 0.5s linear 0s infinite alternate nextlight;
