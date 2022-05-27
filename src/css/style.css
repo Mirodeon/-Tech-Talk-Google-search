@@ -8,6 +8,9 @@
 body {
   background: radial-gradient(black, grey);
   font-family: "Open Sans", sans-serif;
+  font-size: larger;
+  overflow-x: hidden;
+  position: relative;
 }
 body header .nav__header {
   position: fixed;
@@ -32,11 +35,13 @@ body header .nav__header .button__nav {
   justify-content: center;
   border-radius: 0px 50px 50px 0px;
   box-shadow: inset -1px 1px 5px 0px grey, inset -1px -1px 5px 0px grey, -1px 1px 5px 0px black, -1px -1px 5px 0px black;
+  transition: width 1s ease-in 0s;
 }
 body header .nav__header .button__nav img {
   height: 64px;
   width: 64px;
   border-radius: 50%;
+  transition: all 1s ease-in 0s;
 }
 body header .nav__header .button__nav:hover {
   width: 150px;
@@ -48,6 +53,17 @@ body header .nav__header .button__nav:hover img {
   -webkit-animation: 0.5s linear 0s infinite alternate navlight;
           animation: 0.5s linear 0s infinite alternate navlight;
   transform: translateX(25px);
+  cursor: url("../../src/cursor/Obsidian Full.cur"), pointer;
+}
+body header .nav__header .button__nav:active {
+  -webkit-animation: 0s linear 0s infinite alternate nextlight;
+          animation: 0s linear 0s infinite alternate nextlight;
+  filter: drop-shadow(0px 0px 5px cyan);
+}
+body header .nav__header .button__nav:active img {
+  -webkit-animation: 0s linear 0s infinite alternate navlight;
+          animation: 0s linear 0s infinite alternate navlight;
+  filter: drop-shadow(0px 0px 0px cyan);
 }
 body header .nav__header .button__nav.content-clicked {
   width: 150px;
@@ -82,11 +98,16 @@ body main .theme-section .container-img_homepage {
   position: relative;
   width: 500px;
   margin-top: -50px;
+  background: black;
+  -webkit-animation: 0.5s ease-out 0s 1 mov;
+          animation: 0.5s ease-out 0s 1 mov;
 }
 body main .theme-section .container-img_homepage .logo_homepage {
   display: block;
   margin: 0px auto;
   width: 100%;
+  -webkit-animation: 1s ease-in 0s 1 opacit;
+          animation: 1s ease-in 0s 1 opacit;
 }
 body main .theme-section .container-img_homepage .cadre-logo_homepage {
   position: absolute;
@@ -96,6 +117,7 @@ body main .theme-section .container-img_homepage .cadre-logo_homepage {
   top: -80px;
   left: -5px;
   filter: drop-shadow(-1px 1px 5px black) drop-shadow(-1px -1px 5px black);
+  cursor: url("../../src/cursor/lumos.png"), auto;
 }
 body main .theme-section .title_homepage {
   text-align: center;
@@ -134,6 +156,9 @@ body main .theme-section .container-cadre {
   height: 500px;
   margin: 0px auto;
   position: relative;
+  background: black;
+  -webkit-animation: 0.5s ease-out 0s 1 mov;
+          animation: 0.5s ease-out 0s 1 mov;
 }
 body main .theme-section .container-cadre .cadre {
   position: absolute;
@@ -144,6 +169,7 @@ body main .theme-section .container-cadre .cadre {
   display: block;
   filter: drop-shadow(-1px 1px 5px black) drop-shadow(-1px -1px 5px black);
   z-index: 2;
+  cursor: url("../../src/cursor/lumos.png"), auto;
 }
 body main .theme-section .container-cadre .spot {
   position: absolute;
@@ -152,8 +178,10 @@ body main .theme-section .container-cadre .spot {
   height: 100px;
   top: 500px;
   left: 350px;
-  -webkit-animation: 3s ease-in 1s infinite alternate spotlight;
-          animation: 3s ease-in 1s infinite alternate spotlight;
+  -webkit-animation: 3s ease-in 0s infinite alternate spotlight;
+          animation: 3s ease-in 0s infinite alternate spotlight;
+  -webkit-animation: 3.5s cubic-bezier(1, 0, 1, 1) 0s 1 opacit;
+          animation: 3.5s cubic-bezier(1, 0, 1, 1) 0s 1 opacit;
 }
 body main .theme-section .container-cadre .carousel1,
 body main .theme-section .container-cadre .carousel2,
@@ -166,6 +194,8 @@ body main .theme-section .container-cadre .carousel5 {
   overflow: hidden;
   color: white;
   background: black;
+  -webkit-animation: 1s ease-in 0s 1 opacit;
+          animation: 1s ease-in 0s 1 opacit;
 }
 body main .theme-section .container-cadre .carousel1.active,
 body main .theme-section .container-cadre .carousel2.active,
@@ -179,18 +209,48 @@ body main .theme-section .container-cadre .carousel2.active#s1s3,
 body main .theme-section .container-cadre .carousel3.active#s1s3,
 body main .theme-section .container-cadre .carousel4.active#s1s3,
 body main .theme-section .container-cadre .carousel5.active#s1s3 {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr;
+  grid-template-areas: "title img" "txt txt";
+}
+body main .theme-section .container-cadre .carousel1.active#s1s4,
+body main .theme-section .container-cadre .carousel2.active#s1s4,
+body main .theme-section .container-cadre .carousel3.active#s1s4,
+body main .theme-section .container-cadre .carousel4.active#s1s4,
+body main .theme-section .container-cadre .carousel5.active#s1s4 {
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr;
+  grid-template-areas: "img title" "txt txt";
+}
+body main .theme-section .container-cadre .carousel1.active#s2s2,
+body main .theme-section .container-cadre .carousel2.active#s2s2,
+body main .theme-section .container-cadre .carousel3.active#s2s2,
+body main .theme-section .container-cadre .carousel4.active#s2s2,
+body main .theme-section .container-cadre .carousel5.active#s2s2 {
+  display: block;
+}
+body main .theme-section .container-cadre .carousel1.active#s2s4,
+body main .theme-section .container-cadre .carousel2.active#s2s4,
+body main .theme-section .container-cadre .carousel3.active#s2s4,
+body main .theme-section .container-cadre .carousel4.active#s2s4,
+body main .theme-section .container-cadre .carousel5.active#s2s4 {
+  flex-direction: column;
 }
 body main .theme-section .container-cadre .carousel1 #s1s1_img,
 body main .theme-section .container-cadre .carousel1 #s1s2_img,
+body main .theme-section .container-cadre .carousel1 #s2s1_img,
 body main .theme-section .container-cadre .carousel2 #s1s1_img,
 body main .theme-section .container-cadre .carousel2 #s1s2_img,
+body main .theme-section .container-cadre .carousel2 #s2s1_img,
 body main .theme-section .container-cadre .carousel3 #s1s1_img,
 body main .theme-section .container-cadre .carousel3 #s1s2_img,
+body main .theme-section .container-cadre .carousel3 #s2s1_img,
 body main .theme-section .container-cadre .carousel4 #s1s1_img,
 body main .theme-section .container-cadre .carousel4 #s1s2_img,
+body main .theme-section .container-cadre .carousel4 #s2s1_img,
 body main .theme-section .container-cadre .carousel5 #s1s1_img,
-body main .theme-section .container-cadre .carousel5 #s1s2_img {
+body main .theme-section .container-cadre .carousel5 #s1s2_img,
+body main .theme-section .container-cadre .carousel5 #s2s1_img {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -230,15 +290,18 @@ body main .theme-section .container-cadre .carousel5 #s1s3_title {
   font-size: 40px;
   width: 350px;
   box-sizing: border-box;
+  grid-area: title;
+  margin-top: 50px;
 }
 body main .theme-section .container-cadre .carousel1 #s1s3_txt,
 body main .theme-section .container-cadre .carousel2 #s1s3_txt,
 body main .theme-section .container-cadre .carousel3 #s1s3_txt,
 body main .theme-section .container-cadre .carousel4 #s1s3_txt,
 body main .theme-section .container-cadre .carousel5 #s1s3_txt {
-  margin-top: -25px;
+  margin-top: 50px;
+  width: 600px;
+  grid-area: txt;
   margin-left: 100px;
-  width: 640px;
 }
 body main .theme-section .container-cadre .carousel1 #s1s3_img,
 body main .theme-section .container-cadre .carousel2 #s1s3_img,
@@ -252,6 +315,249 @@ body main .theme-section .container-cadre .carousel5 #s1s3_img {
   margin-top: 50px;
   margin-right: 50px;
   box-sizing: border-box;
+  grid-area: img;
+}
+body main .theme-section .container-cadre .carousel1 #s1s4_img,
+body main .theme-section .container-cadre .carousel2 #s1s4_img,
+body main .theme-section .container-cadre .carousel3 #s1s4_img,
+body main .theme-section .container-cadre .carousel4 #s1s4_img,
+body main .theme-section .container-cadre .carousel5 #s1s4_img {
+  display: block;
+  margin-top: 50px;
+  margin-left: 100px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  width: 400px;
+  grid-area: img;
+}
+body main .theme-section .container-cadre .carousel1 #s1s4_title,
+body main .theme-section .container-cadre .carousel2 #s1s4_title,
+body main .theme-section .container-cadre .carousel3 #s1s4_title,
+body main .theme-section .container-cadre .carousel4 #s1s4_title,
+body main .theme-section .container-cadre .carousel5 #s1s4_title {
+  grid-area: title;
+  align-self: center;
+  justify-self: center;
+  margin-right: 100px;
+  font-size: 40px;
+  margin-top: 50px;
+}
+body main .theme-section .container-cadre .carousel1 #s1s4_txt,
+body main .theme-section .container-cadre .carousel2 #s1s4_txt,
+body main .theme-section .container-cadre .carousel3 #s1s4_txt,
+body main .theme-section .container-cadre .carousel4 #s1s4_txt,
+body main .theme-section .container-cadre .carousel5 #s1s4_txt {
+  grid-area: txt;
+  margin-left: 100px;
+  width: 600px;
+  margin-top: 50px;
+}
+body main .theme-section .container-cadre .carousel1 #s2s2_title,
+body main .theme-section .container-cadre .carousel2 #s2s2_title,
+body main .theme-section .container-cadre .carousel3 #s2s2_title,
+body main .theme-section .container-cadre .carousel4 #s2s2_title,
+body main .theme-section .container-cadre .carousel5 #s2s2_title {
+  margin-left: 100px;
+  font-size: 40px;
+  margin-top: 125px;
+}
+body main .theme-section .container-cadre .carousel1 #s2s2_txt,
+body main .theme-section .container-cadre .carousel2 #s2s2_txt,
+body main .theme-section .container-cadre .carousel3 #s2s2_txt,
+body main .theme-section .container-cadre .carousel4 #s2s2_txt,
+body main .theme-section .container-cadre .carousel5 #s2s2_txt {
+  margin-top: 50px;
+  margin-left: 100px;
+}
+body main .theme-section .container-cadre .carousel1 #s2s2_img,
+body main .theme-section .container-cadre .carousel2 #s2s2_img,
+body main .theme-section .container-cadre .carousel3 #s2s2_img,
+body main .theme-section .container-cadre .carousel4 #s2s2_img,
+body main .theme-section .container-cadre .carousel5 #s2s2_img {
+  float: right;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  margin-left: 50px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  width: 450px;
+}
+body main .theme-section .container-cadre .carousel1 #s2s3_img,
+body main .theme-section .container-cadre .carousel2 #s2s3_img,
+body main .theme-section .container-cadre .carousel3 #s2s3_img,
+body main .theme-section .container-cadre .carousel4 #s2s3_img,
+body main .theme-section .container-cadre .carousel5 #s2s3_img {
+  margin-right: 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 50px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  width: 350px;
+  display: block;
+}
+body main .theme-section .container-cadre .carousel1 #s2s3_title,
+body main .theme-section .container-cadre .carousel2 #s2s3_title,
+body main .theme-section .container-cadre .carousel3 #s2s3_title,
+body main .theme-section .container-cadre .carousel4 #s2s3_title,
+body main .theme-section .container-cadre .carousel5 #s2s3_title {
+  font-size: 40px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+body main .theme-section .container-cadre .carousel1 #s2s3_txt,
+body main .theme-section .container-cadre .carousel2 #s2s3_txt,
+body main .theme-section .container-cadre .carousel3 #s2s3_txt,
+body main .theme-section .container-cadre .carousel4 #s2s3_txt,
+body main .theme-section .container-cadre .carousel5 #s2s3_txt {
+  margin-top: 35px;
+  margin-left: 50px;
+}
+body main .theme-section .container-cadre .carousel1 #s2s3_txt strong,
+body main .theme-section .container-cadre .carousel2 #s2s3_txt strong,
+body main .theme-section .container-cadre .carousel3 #s2s3_txt strong,
+body main .theme-section .container-cadre .carousel4 #s2s3_txt strong,
+body main .theme-section .container-cadre .carousel5 #s2s3_txt strong {
+  font-weight: bolder;
+  color: aqua;
+}
+body main .theme-section .container-cadre .carousel1 #s2s4_title,
+body main .theme-section .container-cadre .carousel2 #s2s4_title,
+body main .theme-section .container-cadre .carousel3 #s2s4_title,
+body main .theme-section .container-cadre .carousel4 #s2s4_title,
+body main .theme-section .container-cadre .carousel5 #s2s4_title {
+  font-size: 40px;
+  margin: 0px 100px;
+  margin-top: 50px;
+}
+body main .theme-section .container-cadre .carousel1 #s2s4_txt,
+body main .theme-section .container-cadre .carousel2 #s2s4_txt,
+body main .theme-section .container-cadre .carousel3 #s2s4_txt,
+body main .theme-section .container-cadre .carousel4 #s2s4_txt,
+body main .theme-section .container-cadre .carousel5 #s2s4_txt {
+  margin: 50px 100px;
+}
+body main .theme-section .container-cadre .carousel1 #s2s4_txt strong,
+body main .theme-section .container-cadre .carousel2 #s2s4_txt strong,
+body main .theme-section .container-cadre .carousel3 #s2s4_txt strong,
+body main .theme-section .container-cadre .carousel4 #s2s4_txt strong,
+body main .theme-section .container-cadre .carousel5 #s2s4_txt strong {
+  font-weight: bolder;
+  color: aqua;
+}
+body main .theme-section .container-cadre .carousel1 #s2s5_img,
+body main .theme-section .container-cadre .carousel2 #s2s5_img,
+body main .theme-section .container-cadre .carousel3 #s2s5_img,
+body main .theme-section .container-cadre .carousel4 #s2s5_img,
+body main .theme-section .container-cadre .carousel5 #s2s5_img {
+  display: block;
+  width: 900px;
+  height: 500px;
+}
+body main .theme-section .container-cadre .carousel1 #s3s1_img,
+body main .theme-section .container-cadre .carousel2 #s3s1_img,
+body main .theme-section .container-cadre .carousel3 #s3s1_img,
+body main .theme-section .container-cadre .carousel4 #s3s1_img,
+body main .theme-section .container-cadre .carousel5 #s3s1_img {
+  margin-top: 10px;
+  width: 900px;
+}
+body main .theme-section .container-cadre .carousel1 #s3s2_title, body main .theme-section .container-cadre .carousel1 #s3s3_title, body main .theme-section .container-cadre .carousel1 #s3s4_title,
+body main .theme-section .container-cadre .carousel2 #s3s2_title,
+body main .theme-section .container-cadre .carousel2 #s3s3_title,
+body main .theme-section .container-cadre .carousel2 #s3s4_title,
+body main .theme-section .container-cadre .carousel3 #s3s2_title,
+body main .theme-section .container-cadre .carousel3 #s3s3_title,
+body main .theme-section .container-cadre .carousel3 #s3s4_title,
+body main .theme-section .container-cadre .carousel4 #s3s2_title,
+body main .theme-section .container-cadre .carousel4 #s3s3_title,
+body main .theme-section .container-cadre .carousel4 #s3s4_title,
+body main .theme-section .container-cadre .carousel5 #s3s2_title,
+body main .theme-section .container-cadre .carousel5 #s3s3_title,
+body main .theme-section .container-cadre .carousel5 #s3s4_title {
+  font-size: 40px;
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 250px;
+}
+body main .theme-section .container-cadre .carousel1 #s3s2_txt, body main .theme-section .container-cadre .carousel1 #s3s3_txt, body main .theme-section .container-cadre .carousel1 #s3s4_txt,
+body main .theme-section .container-cadre .carousel2 #s3s2_txt,
+body main .theme-section .container-cadre .carousel2 #s3s3_txt,
+body main .theme-section .container-cadre .carousel2 #s3s4_txt,
+body main .theme-section .container-cadre .carousel3 #s3s2_txt,
+body main .theme-section .container-cadre .carousel3 #s3s3_txt,
+body main .theme-section .container-cadre .carousel3 #s3s4_txt,
+body main .theme-section .container-cadre .carousel4 #s3s2_txt,
+body main .theme-section .container-cadre .carousel4 #s3s3_txt,
+body main .theme-section .container-cadre .carousel4 #s3s4_txt,
+body main .theme-section .container-cadre .carousel5 #s3s2_txt,
+body main .theme-section .container-cadre .carousel5 #s3s3_txt,
+body main .theme-section .container-cadre .carousel5 #s3s4_txt {
+  margin-top: 25px;
+  margin-left: 50px;
+  width: 250px;
+}
+body main .theme-section .container-cadre .carousel1 #s3s2_txt strong, body main .theme-section .container-cadre .carousel1 #s3s3_txt strong, body main .theme-section .container-cadre .carousel1 #s3s4_txt strong,
+body main .theme-section .container-cadre .carousel2 #s3s2_txt strong,
+body main .theme-section .container-cadre .carousel2 #s3s3_txt strong,
+body main .theme-section .container-cadre .carousel2 #s3s4_txt strong,
+body main .theme-section .container-cadre .carousel3 #s3s2_txt strong,
+body main .theme-section .container-cadre .carousel3 #s3s3_txt strong,
+body main .theme-section .container-cadre .carousel3 #s3s4_txt strong,
+body main .theme-section .container-cadre .carousel4 #s3s2_txt strong,
+body main .theme-section .container-cadre .carousel4 #s3s3_txt strong,
+body main .theme-section .container-cadre .carousel4 #s3s4_txt strong,
+body main .theme-section .container-cadre .carousel5 #s3s2_txt strong,
+body main .theme-section .container-cadre .carousel5 #s3s3_txt strong,
+body main .theme-section .container-cadre .carousel5 #s3s4_txt strong {
+  font-weight: bolder;
+  color: aqua;
+}
+body main .theme-section .container-cadre .carousel1 #s3s2_img,
+body main .theme-section .container-cadre .carousel2 #s3s2_img,
+body main .theme-section .container-cadre .carousel3 #s3s2_img,
+body main .theme-section .container-cadre .carousel4 #s3s2_img,
+body main .theme-section .container-cadre .carousel5 #s3s2_img {
+  display: block;
+  margin: 50px 50px;
+  border-radius: 50px;
+  width: 500px;
+}
+body main .theme-section .container-cadre .carousel1 #s3s3_img, body main .theme-section .container-cadre .carousel1 #s3s4_img,
+body main .theme-section .container-cadre .carousel2 #s3s3_img,
+body main .theme-section .container-cadre .carousel2 #s3s4_img,
+body main .theme-section .container-cadre .carousel3 #s3s3_img,
+body main .theme-section .container-cadre .carousel3 #s3s4_img,
+body main .theme-section .container-cadre .carousel4 #s3s3_img,
+body main .theme-section .container-cadre .carousel4 #s3s4_img,
+body main .theme-section .container-cadre .carousel5 #s3s3_img,
+body main .theme-section .container-cadre .carousel5 #s3s4_img {
+  display: block;
+  margin: 50px 50px;
+  border-radius: 15px;
+  width: 500px;
+}
+body main .theme-section .container-cadre .carousel1 #s4s1_img,
+body main .theme-section .container-cadre .carousel2 #s4s1_img,
+body main .theme-section .container-cadre .carousel3 #s4s1_img,
+body main .theme-section .container-cadre .carousel4 #s4s1_img,
+body main .theme-section .container-cadre .carousel5 #s4s1_img {
+  display: block;
+  margin: 0px auto;
+  height: 500px;
+}
+body main .theme-section .container-cadre .carousel1 #s4s1_title,
+body main .theme-section .container-cadre .carousel2 #s4s1_title,
+body main .theme-section .container-cadre .carousel3 #s4s1_title,
+body main .theme-section .container-cadre .carousel4 #s4s1_title,
+body main .theme-section .container-cadre .carousel5 #s4s1_title {
+  position: absolute;
+  z-index: 1;
+  font-size: 30px;
+  top: 75px;
+  right: 50px;
+  transform: rotate(-10deg);
 }
 body main .theme-section .container-button {
   box-sizing: border-box;
@@ -264,7 +570,6 @@ body main .theme-section .container-button {
 }
 body main .theme-section .container-button .button-carousel {
   position: relative;
-  cursor: pointer;
 }
 body main .theme-section .container-button .button-carousel .next1,
 body main .theme-section .container-button .button-carousel .prev1,
@@ -296,12 +601,22 @@ body main .theme-section .container-button .button-carousel .bg-button {
 body main .theme-section .container-button .button-carousel:hover {
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
-  cursor: url("../../src/cursor/Obsidian Full.cur"), pointer;
 }
 body main .theme-section .container-button .button-carousel:hover img {
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
   opacity: 1;
+  cursor: url("../../src/cursor/Obsidian Full.cur"), pointer;
+}
+body main .theme-section .container-button .button-carousel:active {
+  -webkit-animation: 0s linear 0s infinite alternate nextlight;
+          animation: 0s linear 0s infinite alternate nextlight;
+  filter: drop-shadow(0px 0px 5px cyan);
+}
+body main .theme-section .container-button .button-carousel:active img {
+  -webkit-animation: 0s linear 0s infinite alternate nextlight;
+          animation: 0s linear 0s infinite alternate nextlight;
+  filter: drop-shadow(0px 0px 5px cyan);
 }
 
 @-webkit-keyframes nextlight {
@@ -367,5 +682,37 @@ body main .theme-section .container-button .button-carousel:hover img {
   }
   10% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes opacit {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opacit {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes mov {
+  from {
+    top: -1500px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@keyframes mov {
+  from {
+    top: -1500px;
+  }
+  to {
+    top: 0px;
   }
 }/*# sourceMappingURL=style.css.map */

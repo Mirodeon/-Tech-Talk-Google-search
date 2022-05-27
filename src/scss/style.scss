@@ -9,6 +9,9 @@
 body {
     background: radial-gradient(black, grey);
     font-family: 'Open Sans', sans-serif;
+    font-size: larger;
+    overflow-x: hidden;
+    position: relative;
 
     header {
         .nav__header {
@@ -34,11 +37,13 @@ body {
                 justify-content: center;
                 border-radius: 0px 50px 50px 0px;
                 box-shadow: inset -1px 1px 5px 0px grey, inset -1px -1px 5px 0px grey, -1px 1px 5px 0px black, -1px -1px 5px 0px black;
+                transition: width 1s ease-in 0s;
 
                 img {
                     height: 64px;
                     width: 64px;
                     border-radius: 50%;
+                    transition: all 1s ease-in 0s;
                 }
 
                 &:hover {
@@ -49,6 +54,17 @@ body {
                     img {
                         animation: 0.5s linear 0s infinite alternate navlight;
                         transform: translateX(25px);
+                        cursor: url('../../src/cursor/Obsidian Full.cur'), pointer;
+                    }
+                }
+
+                &:active {
+                    animation: 0s linear 0s infinite alternate nextlight;
+                    filter: drop-shadow(0px 0px 5px cyan);
+
+                    img {
+                        animation: 0s linear 0s infinite alternate navlight;
+                        filter: drop-shadow(0px 0px 0px cyan);
                     }
                 }
 
@@ -91,11 +107,14 @@ body {
                 position: relative;
                 width: 500px;
                 margin-top: -50px;
+                background: black;
+                animation: 0.5s ease-out 0s 1 mov;
 
                 .logo_homepage {
                     display: block;
                     margin: 0px auto;
                     width: 100%;
+                    animation: 1s ease-in 0s 1 opacit;
                 }
 
                 .cadre-logo_homepage {
@@ -106,6 +125,7 @@ body {
                     top: -80px;
                     left: -5px;
                     filter: drop-shadow(-1px 1px 5px black) drop-shadow(-1px -1px 5px black);
+                    cursor: url('../../src/cursor/lumos.png'), auto;
                 }
             }
 
@@ -146,6 +166,8 @@ body {
                 height: 500px;
                 margin: 0px auto;
                 position: relative;
+                background: black;
+                animation: 0.5s ease-out 0s 1 mov;
 
                 .cadre {
                     position: absolute;
@@ -156,6 +178,7 @@ body {
                     display: block;
                     filter: drop-shadow(-1px 1px 5px black) drop-shadow(-1px -1px 5px black);
                     z-index: 2;
+                    cursor: url('../../src/cursor/lumos.png'), auto;
                 }
 
                 .spot {
@@ -165,7 +188,8 @@ body {
                     height: 100px;
                     top: 500px;
                     left: 350px;
-                    animation: 3s ease-in 1s infinite alternate spotlight;
+                    animation: 3s ease-in 0s infinite alternate spotlight;
+                    animation: 3.5s cubic-bezier(1, 0, 1, 1) 0s 1 opacit;
                 }
 
                 .carousel1,
@@ -179,17 +203,39 @@ body {
                     overflow: hidden;
                     color: white;
                     background: black;
+                    animation: 1s ease-in 0s 1 opacit;
 
                     &.active {
                         display: flex;
 
                         &#s1s3 {
-                            flex-wrap: wrap;
+                            display: grid;
+                            grid-template: 1fr 1fr/ 1fr 1fr;
+                            grid-template-areas:
+                                "title img"
+                                "txt txt";
+                        }
+
+                        &#s1s4 {
+                            display: grid;
+                            grid-template: 1fr 1fr/ 1fr 1fr;
+                            grid-template-areas:
+                                "img title"
+                                "txt txt";
+                        }
+
+                        &#s2s2 {
+                            display: block;
+                        }
+
+                        &#s2s4 {
+                            flex-direction: column;
                         }
                     }
 
                     #s1s1_img,
-                    #s1s2_img {
+                    #s1s2_img,
+                    #s2s1_img {
                         position: absolute;
                         top: 0px;
                         left: 0px;
@@ -219,12 +265,15 @@ body {
                         font-size: 40px;
                         width: 350px;
                         box-sizing: border-box;
+                        grid-area: title;
+                        margin-top: 50px;
                     }
 
                     #s1s3_txt {
-                        margin-top: -25px;
+                        margin-top: 50px;
+                        width: 600px;
+                        grid-area: txt;
                         margin-left: 100px;
-                        width: 640px;
                     }
 
                     #s1s3_img {
@@ -235,7 +284,157 @@ body {
                         margin-top: 50px;
                         margin-right: 50px;
                         box-sizing: border-box;
+                        grid-area: img;
                     }
+
+                    #s1s4_img {
+                        display: block;
+                        margin-top: 50px;
+                        margin-left: 100px;
+                        box-sizing: border-box;
+                        border-radius: 50px;
+                        width: 400px;
+                        grid-area: img;
+                    }
+
+                    #s1s4_title {
+                        grid-area: title;
+                        align-self: center;
+                        justify-self: center;
+                        margin-right: 100px;
+                        font-size: 40px;
+                        margin-top: 50px;
+                    }
+
+                    #s1s4_txt {
+                        grid-area: txt;
+                        margin-left: 100px;
+                        width: 600px;
+                        margin-top: 50px;
+                    }
+
+                    #s2s2_title {
+
+                        margin-left: 100px;
+                        font-size: 40px;
+                        margin-top: 125px;
+                    }
+
+                    #s2s2_txt {
+                        margin-top: 50px;
+                        margin-left: 100px;
+                    }
+
+                    #s2s2_img {
+                        float: right;
+                        margin-right: 50px;
+                        margin-top: 50px;
+                        margin-bottom: 25px;
+                        margin-left: 50px;
+                        border-radius: 50px;
+                        box-sizing: border-box;
+                        width: 450px;
+                    }
+
+                    #s2s3_img {
+                        margin-right: 50px;
+                        margin-top: 100px;
+                        margin-bottom: 100px;
+                        margin-left: 50px;
+                        border-radius: 50px;
+                        box-sizing: border-box;
+                        width: 350px;
+                        display: block;
+                    }
+
+                    #s2s3_title {
+                        font-size: 40px;
+                        margin-top: 50px;
+                        margin-left: 50px;
+                    }
+
+                    #s2s3_txt {
+                        margin-top: 35px;
+                        margin-left: 50px;
+
+                        strong {
+                            font-weight: bolder;
+                            color: aqua;
+                        }
+                    }
+
+                    #s2s4_title {
+                        font-size: 40px;
+                        margin: 0px 100px;
+                        margin-top: 50px;
+                    }
+
+                    #s2s4_txt {
+                        margin: 50px 100px;
+
+                        strong {
+                            font-weight: bolder;
+                            color: aqua;
+                        }
+                    }
+
+                    #s2s5_img {
+                        display: block;
+                        width: 900px;
+                        height: 500px;
+                    }
+
+                    #s3s1_img {
+                        margin-top: 10px;
+                        width: 900px;
+                    }
+
+                    #s3s2_title, #s3s3_title, #s3s4_title {
+                        font-size: 40px;
+                        margin-top: 50px;
+                        margin-left: 50px;
+                        width: 250px;
+                    }
+
+                    #s3s2_txt, #s3s3_txt, #s3s4_txt {
+                        margin-top: 25px;
+                        margin-left: 50px;
+                        width: 250px;
+
+                        strong {
+                            font-weight: bolder;
+                            color: aqua;
+                        }
+                    }
+
+                    #s3s2_img {
+                        display: block;
+                        margin: 50px 50px;
+                        border-radius: 50px;
+                        width: 500px;
+                    }
+                    #s3s3_img, #s3s4_img {
+                        display: block;
+                        margin: 50px 50px;
+                        border-radius: 15px;
+                        width: 500px;
+                    }
+
+                    #s4s1_img {
+                        display:block;
+                        margin: 0px auto;
+                        height: 500px;
+                    }
+
+                    #s4s1_title {
+                        position: absolute;
+                        z-index: 1;
+                        font-size: 30px;
+                        top: 75px;
+                        right: 50px;
+                        transform: rotate(-10deg);
+                    }
+
                 }
             }
 
@@ -250,7 +449,6 @@ body {
 
                 .button-carousel {
                     position: relative;
-                    cursor: pointer;
 
                     .next1,
                     .prev1,
@@ -283,11 +481,21 @@ body {
 
                     &:hover {
                         animation: 0.5s linear 0s infinite alternate nextlight;
-                        cursor: url('../../src/cursor/Obsidian Full.cur'), pointer;
 
                         img {
                             animation: 0.5s linear 0s infinite alternate nextlight;
                             opacity: 1;
+                            cursor: url('../../src/cursor/Obsidian Full.cur'), pointer;
+                        }
+                    }
+
+                    &:active {
+                        animation: 0s linear 0s infinite alternate nextlight;
+                        filter: drop-shadow(0px 0px 5px cyan);
+
+                        img {
+                            animation: 0s linear 0s infinite alternate nextlight;
+                            filter: drop-shadow(0px 0px 5px cyan);
                         }
                     }
                 }
@@ -333,5 +541,25 @@ body {
 
     10% {
         opacity: 0;
+    }
+}
+
+@keyframes opacit {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mov {
+    from {
+        top: -1500px;
+    }
+
+    to {
+        top: 0px;
     }
 }

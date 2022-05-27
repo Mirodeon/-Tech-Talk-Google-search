@@ -155,7 +155,7 @@
 //Carousel4
 
 //Carousel5
-{
+/*{
     const items = document.querySelectorAll(".carousel5");
     const nbSlide = items.length;
     const next = document.querySelector(".next5");
@@ -190,7 +190,7 @@
     }
 
     prev.addEventListener("click", prevSlide);
-}
+}*/
 //Carousel5
 
 //Jump Section
@@ -213,3 +213,4 @@ const resetClasses = () => {
     });
 };
 //Jump Section
+  
