@@ -178,10 +178,8 @@ body main .theme-section .container-cadre .spot {
   height: 100px;
   top: 500px;
   left: 350px;
-  -webkit-animation: 3s ease-in 0s infinite alternate spotlight;
-          animation: 3s ease-in 0s infinite alternate spotlight;
-  -webkit-animation: 3.5s cubic-bezier(1, 0, 1, 1) 0s 1 opacit;
-          animation: 3.5s cubic-bezier(1, 0, 1, 1) 0s 1 opacit;
+  -webkit-animation: 3.5s cubic-bezier(1, 0, 1, 1) 0s 1 opacit, 3s ease-in 3.5s infinite alternate spotlight;
+          animation: 3.5s cubic-bezier(1, 0, 1, 1) 0s 1 opacit, 3s ease-in 3.5s infinite alternate spotlight;
 }
 body main .theme-section .container-cadre .carousel1,
 body main .theme-section .container-cadre .carousel2,
