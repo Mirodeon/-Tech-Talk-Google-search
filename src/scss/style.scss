@@ -49,12 +49,12 @@ body {
                 &:hover {
                     width: 150px;
                     animation: 0.5s linear 0s infinite alternate nextlight;
-                    cursor: url('../../src/cursor/Obsidian Full.cur'), pointer;
+                    cursor: url('../../src/cursor/Obsidian full.cur'), pointer;
 
                     img {
                         animation: 0.5s linear 0s infinite alternate navlight;
                         transform: translateX(25px);
-                        cursor: url('../../src/cursor/Obsidian Full.cur'), pointer;
+                        cursor: url('../../src/cursor/Obsidian full.cur'), pointer;
                     }
                 }
 
@@ -485,7 +485,7 @@ body {
                         img {
                             animation: 0.5s linear 0s infinite alternate nextlight;
                             opacity: 1;
-                            cursor: url('../../src/cursor/Obsidian Full.cur'), pointer;
+                            cursor: url('../../src/cursor/Obsidian full.cur'), pointer;
                         }
                     }
 

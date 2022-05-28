@@ -47,13 +47,13 @@ body header .nav__header .button__nav:hover {
   width: 150px;
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
-  cursor: url("../../src/cursor/Obsidian Full.cur"), pointer;
+  cursor: url("../../src/cursor/Obsidian full.cur"), pointer;
 }
 body header .nav__header .button__nav:hover img {
   -webkit-animation: 0.5s linear 0s infinite alternate navlight;
           animation: 0.5s linear 0s infinite alternate navlight;
   transform: translateX(25px);
-  cursor: url("../../src/cursor/Obsidian Full.cur"), pointer;
+  cursor: url("../../src/cursor/Obsidian full.cur"), pointer;
 }
 body header .nav__header .button__nav:active {
   -webkit-animation: 0s linear 0s infinite alternate nextlight;
@@ -606,7 +606,7 @@ body main .theme-section .container-button .button-carousel:hover img {
   -webkit-animation: 0.5s linear 0s infinite alternate nextlight;
           animation: 0.5s linear 0s infinite alternate nextlight;
   opacity: 1;
-  cursor: url("../../src/cursor/Obsidian Full.cur"), pointer;
+  cursor: url("../../src/cursor/Obsidian full.cur"), pointer;
 }
 body main .theme-section .container-button .button-carousel:active {
   -webkit-animation: 0s linear 0s infinite alternate nextlight;
